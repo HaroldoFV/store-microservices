@@ -8,27 +8,23 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="AspNetCore.HealthChecks.MongoDb" Version="8.0.0" />
-        <PackageReference Include="AspNetCore.HealthChecks.UI" Version="8.0.0" />
-        <PackageReference Include="AspNetCore.HealthChecks.UI.Client" Version="8.0.0" />
-        <PackageReference Include="AspNetCore.HealthChecks.UI.InMemory.Storage" Version="8.0.0" />
+        <PackageReference Include="AspNetCore.HealthChecks.MongoDb" Version="8.0.0"/>
+        <PackageReference Include="AspNetCore.HealthChecks.UI" Version="8.0.0"/>
+        <PackageReference Include="AspNetCore.HealthChecks.UI.Client" Version="8.0.0"/>
+        <PackageReference Include="AspNetCore.HealthChecks.UI.InMemory.Storage" Version="8.0.0"/>
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.10"/>
-        <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.2" />
-        <PackageReference Include="MongoDB.Driver" Version="2.24.0" />
+        <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.2"/>
+        <PackageReference Include="MongoDB.Driver" Version="2.24.0"/>
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0"/>
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Controllers\" />
+        <Folder Include="Controllers\"/>
     </ItemGroup>
 
+   
     <ItemGroup>
-      <Compile Remove="Controllers\WeatherForecastController.cs" />
-      <Compile Remove="WeatherForecast.cs" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <ProjectReference Include="..\Middleware\Middleware.csproj" />
+        <ProjectReference Include="..\Middleware\Middleware.csproj"/>
     </ItemGroup>
 
 </Project>
