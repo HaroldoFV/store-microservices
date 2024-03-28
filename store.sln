@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D4714291-2882-40FC-ABA5-1F746854CD14}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{603B0AE4-15B8-4C63-A121-F159A876674E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "microservices", "microservices", "{44162A77-A8D2-401A-A5D3-6C3D5BF78430}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatalogMicroservice", "CatalogMicroservice\CatalogMicroservice.csproj", "{CDED5940-6EA5-46B3-A3B4-34FCE72BD22C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CDED5940-6EA5-46B3-A3B4-34FCE72BD22C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDED5940-6EA5-46B3-A3B4-34FCE72BD22C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDED5940-6EA5-46B3-A3B4-34FCE72BD22C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDED5940-6EA5-46B3-A3B4-34FCE72BD22C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{44162A77-A8D2-401A-A5D3-6C3D5BF78430} = {D4714291-2882-40FC-ABA5-1F746854CD14}
+		{CDED5940-6EA5-46B3-A3B4-34FCE72BD22C} = {44162A77-A8D2-401A-A5D3-6C3D5BF78430}
+	EndGlobalSection
+EndGlobal
