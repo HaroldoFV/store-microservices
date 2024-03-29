@@ -27,4 +27,10 @@
         <ProjectReference Include="..\Middleware\Middleware.csproj"/>
     </ItemGroup>
 
+   
+    <ItemGroup>
+      <Compile Remove="WeatherForecast.cs" />
+      <Compile Remove="Controllers\WeatherForecastController.cs" />
+    </ItemGroup>
+
 </Project>
