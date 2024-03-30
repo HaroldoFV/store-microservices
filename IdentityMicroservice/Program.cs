@@ -1,5 +1,6 @@
-using CatalogMicroservice.Repository;
 using HealthChecks.UI.Client;
+using System.Configuration;
+using IdentityMicroservice.Repository;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Rewrite;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
@@ -13,16 +14,16 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddMongoDb(builder.Configuration);
-
-builder.Services.AddSingleton<ICatalogRepository>(sp =>
-    new CatalogRepository(sp.GetService<IMongoDatabase>() ??
-                          throw new Exception(
-                              "IMongoDatabase not found"))
+builder.Services.AddJwt(builder.Configuration);
+builder.Services.AddTransient<IEncryptor, Encryptor>();
+builder.Services.AddSingleton<IUserRepository>(sp =>
+    new UserRepository(sp.GetService<IMongoDatabase>() ??
+                       throw new Exception(
+                           "IMongoDatabase not found"))
 );
+
 builder.Services.AddEndpointsApiExplorer();
-
-builder.Services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new OpenApiInfo {Title = "Catalog", Version = "v1"}); }
-);
+builder.Services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new OpenApiInfo {Title = "User", Version = "v1"}); });
 
 builder.Services.AddHealthChecks()
     .AddMongoDb(
@@ -33,7 +34,6 @@ builder.Services.AddHealthChecks()
         name: "mongo",
         failureStatus: HealthStatus.Unhealthy
     );
-
 builder.Services.AddHealthChecksUI().AddInMemoryStorage();
 
 var app = builder.Build();
@@ -46,7 +46,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseSwagger();
 
-app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", "Catalog V1"); });
+app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", "Identity V1"); });
 
 var option = new RewriteOptions();
 option.AddRedirect("^$", "swagger");
@@ -61,10 +61,8 @@ app.UseHttpsRedirection();
 
 app.UseRouting();
 
-app.UseAuthentication();
-
 app.UseAuthorization();
 
-app.MapControllers(); 
+app.MapControllers();
 
 app.Run();
