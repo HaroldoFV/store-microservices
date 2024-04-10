@@ -1,0 +1,22 @@
+### Send POST request with json body
+POST http://localhost:5235/api/Identity/register
+Content-Type: application/json
+
+{
+  "email": "user@store.com",
+  "password": "pass"
+}
+
+### Send POST request with json body
+POST http://localhost:5235/api/Identity/login
+Content-Type: application/json
+
+{
+  "email": "user@store.com",
+  "password": "pass"
+}
+
+### GET request with environment variables
+GET http://localhost:5235/api/identity/validate?email=user@store.com
+    &token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjE1ZjU4NzE0MjI3ZTQwMjEyMjc4NzgiLCJleHAiOjE3MTI3MTg3ODN9.ZYHBfPPSVMnWO5o5wgqlB_GTO7J38ldoVaca4RIa0rI 
+Accept: application/json
