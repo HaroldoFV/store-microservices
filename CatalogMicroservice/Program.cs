@@ -12,6 +12,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllers();
+builder.Services.AddJwtAuthenctication(builder.Configuration);
 builder.Services.AddMongoDb(builder.Configuration);
 
 builder.Services.AddSingleton<ICatalogRepository>(sp =>
@@ -21,8 +22,31 @@ builder.Services.AddSingleton<ICatalogRepository>(sp =>
 );
 builder.Services.AddEndpointsApiExplorer();
 
-builder.Services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new OpenApiInfo {Title = "Catalog", Version = "v1"}); }
-);
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new OpenApiInfo {Title = "Catalog", Version = "v1"});
+
+    c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    {
+        In = ParameterLocation.Header,
+        Description = "Please insert JWT with Bearer into field",
+        Name = "Authorization",
+        Type = SecuritySchemeType.ApiKey,
+        Scheme = "bearer",
+        BearerFormat = "JWT",
+    });
+
+    c.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference {Type = ReferenceType.SecurityScheme, Id = "Bearer"}
+            },
+            new String[] { }
+        }
+    });
+});
 
 builder.Services.AddHealthChecks()
     .AddMongoDb(
@@ -61,10 +85,12 @@ app.UseHttpsRedirection();
 
 app.UseRouting();
 
+app.UseMiddleware<JwtMiddleware>(); // JWT Middleware
+
 app.UseAuthentication();
 
 app.UseAuthorization();
 
-app.MapControllers(); 
+app.MapControllers();
 
 app.Run();

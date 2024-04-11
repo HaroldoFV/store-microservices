@@ -1,5 +1,6 @@
 using CatalogMicroservice.Model;
 using CatalogMicroservice.Repository;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CatalogMicroservice.Controllers
@@ -10,6 +11,7 @@ namespace CatalogMicroservice.Controllers
     {
         // GET api/<CatalogController>
         [HttpGet]
+        [Authorize]
         public IActionResult Get()
         {
             var catalogItems = catalogRepository.GetCatalogItems();
@@ -18,6 +20,7 @@ namespace CatalogMicroservice.Controllers
 
         // GET api/<CatalogController>/653e4410614d711b7fc953a7
         [HttpGet("{id}")]
+        [Authorize]
         public IActionResult Get(string id)
         {
             var catalogItem = catalogRepository.GetCatalogItem(id);
@@ -26,6 +29,7 @@ namespace CatalogMicroservice.Controllers
 
         // POST api/<CatalogController>/
         [HttpPost]
+        [Authorize]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public IActionResult Post([FromBody] CatalogItem catalogItem)
@@ -38,6 +42,7 @@ namespace CatalogMicroservice.Controllers
 
         // PUT api/<CatalogController>/
         [HttpPut]
+        [Authorize]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public IActionResult Put([FromBody] CatalogItem? catalogItem)
@@ -53,6 +58,7 @@ namespace CatalogMicroservice.Controllers
 
         // DELETE api/<CatalogController>/653e4410614d711b7fc953a7
         [HttpDelete]
+        [Authorize]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public IActionResult Delete(string id)

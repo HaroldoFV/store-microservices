@@ -1,0 +1,16 @@
+### GET  
+GET http://localhost:5086/api/Catalog
+Accept: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjE1ZjU4NzE0MjI3ZTQwMjEyMjc4NzgiLCJleHAiOjE3MTI4NzEyMTJ9.4kFFvVE2D0VgPazEXZ_zo-Xd3GV24DeA0EE_nfab6qA
+
+
+### Send POST request with json body
+POST http://localhost:5086/api/Catalog
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjE1ZjU4NzE0MjI3ZTQwMjEyMjc4NzgiLCJleHAiOjE3MTI4NzEyMTJ9.4kFFvVE2D0VgPazEXZ_zo-Xd3GV24DeA0EE_nfab6qA
+
+{
+  "name": "catalog test",
+  "description": "test catalog",
+  "price": 19.99
+}
