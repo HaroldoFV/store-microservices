@@ -1,6 +1,47 @@
-@CartMicroservice_HostAddress = http://localhost:5067
-
-GET {{CartMicroservice_HostAddress}}/weatherforecast/
+### GET  
+GET http://localhost:5067/api/Cart?u=6615f58714227e4021227878
 Accept: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjE1ZjU4NzE0MjI3ZTQwMjEyMjc4NzgiLCJleHAiOjE3MTM0NjkzMDJ9.xEZUpePCFIT0IidIZCXq3RJSFvTuZhK2aC_V7jvjt24
 
-###
+
+### Send POST request with json body
+POST http://localhost:5067/api/Cart?u=6615f58714227e4021227878
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjE1ZjU4NzE0MjI3ZTQwMjEyMjc4NzgiLCJleHAiOjE3MTM0NjkzMDJ9.xEZUpePCFIT0IidIZCXq3RJSFvTuZhK2aC_V7jvjt24
+
+{
+  "catalogItemId": "6605dd06002510bdf4ae99d9",
+  "name": "cart test",
+  "price": 199.90,
+  "quantity": 22
+}
+
+
+### Send PUT request with json body
+PUT http://localhost:5067/api/Cart?u=6615f58714227e4021227878
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjE1ZjU4NzE0MjI3ZTQwMjEyMjc4NzgiLCJleHAiOjE3MTM0NjkzMDJ9.xEZUpePCFIT0IidIZCXq3RJSFvTuZhK2aC_V7jvjt24
+
+{
+  "catalogItemId": "6605dd06002510bdf4ae99d9",
+  "name": "cart test 2",
+  "price": 30.45,
+  "quantity": 25
+}
+
+### 
+DELETE http://localhost:5067/api/Cart?u=6615f58714227e4021227878&ci=6605dd06002510bdf4ae99d9
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjE1ZjU4NzE0MjI3ZTQwMjEyMjc4NzgiLCJleHAiOjE3MTM0NjkzMDJ9.xEZUpePCFIT0IidIZCXq3RJSFvTuZhK2aC_V7jvjt24
+
+
+### Send PUT request 
+PUT http://localhost:5067/api/Cart/upadate-catalog-item?ci=6605dd06002510bdf4ae99d9&n=cart%20test%20update3&p=23.00
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjE1ZjU4NzE0MjI3ZTQwMjEyMjc4NzgiLCJleHAiOjE3MTM0NjkzMDJ9.xEZUpePCFIT0IidIZCXq3RJSFvTuZhK2aC_V7jvjt24
+
+
+### 
+DELETE http://localhost:5067/api/Cart/delete-catalog-item?ci=6605dd06002510bdf4ae99d9
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjE1ZjU4NzE0MjI3ZTQwMjEyMjc4NzgiLCJleHAiOjE3MTM0NjkzMDJ9.xEZUpePCFIT0IidIZCXq3RJSFvTuZhK2aC_V7jvjt24
