@@ -1,13 +1,13 @@
 ### GET  
 GET http://localhost:5067/api/Cart?u=6615f58714227e4021227878
 Accept: application/json
-Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjE1ZjU4NzE0MjI3ZTQwMjEyMjc4NzgiLCJleHAiOjE3MTM0NjkzMDJ9.xEZUpePCFIT0IidIZCXq3RJSFvTuZhK2aC_V7jvjt24
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjI0Njg2NTU2NDc1ODFiZGIzY2UzOTUiLCJleHAiOjE3MTM2NjU4OTl9.KJr2rD0PFfeykG3kxypD99ADhbi_TW3fGWTz8RrBnrk
 
 
 ### Send POST request with json body
 POST http://localhost:5067/api/Cart?u=6615f58714227e4021227878
 Content-Type: application/json
-Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjE1ZjU4NzE0MjI3ZTQwMjEyMjc4NzgiLCJleHAiOjE3MTM0NjkzMDJ9.xEZUpePCFIT0IidIZCXq3RJSFvTuZhK2aC_V7jvjt24
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjI0Njg2NTU2NDc1ODFiZGIzY2UzOTUiLCJleHAiOjE3MTM2NjU4OTl9.KJr2rD0PFfeykG3kxypD99ADhbi_TW3fGWTz8RrBnrk
 
 {
   "catalogItemId": "6605dd06002510bdf4ae99d9",
