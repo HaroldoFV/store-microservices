@@ -23,8 +23,19 @@ public class RequestResponseLogging(RequestDelegate next, ILogger<RequestRespons
         using var responseBody = new MemoryStream();
         context.Response.Body = responseBody;
         await next(context);
-        
-        var response = await FormatRe
+
+        var response = await FormatResponse(context.Response);
+        builder.Append("Response: ").AppendLine(response);
+        builder.AppendLine("Response headers: ");
+
+        foreach (var header in context.Response.Headers)
+        {
+            builder.Append(header.Key).Append(": ").AppendLine(header.Value);
+        }
+
+        logger.LogInformation(builder.ToString());
+
+        await responseBody.CopyToAsync(originalBodyStream);
     }
 
     private static async Task<string> FormatRequest(HttpRequest request)
@@ -40,5 +51,13 @@ public class RequestResponseLogging(RequestDelegate next, ILogger<RequestRespons
             $"{request.Method} {request.Scheme}://{request.Host}{request.Path}{request.QueryString} {body}";
         request.Body.Position = 0;
         return formattedRequest;
+    }
+
+    private static async Task<string> FormatResponse(HttpResponse response)
+    {
+        response.Body.Seek(0, SeekOrigin.Begin);
+        string text = await new StreamReader(response.Body).ReadToEndAsync();
+        response.Body.Seek(0, SeekOrigin.Begin);
+        return $"{response.StatusCode}: {text}";
     }
 }
