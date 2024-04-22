@@ -1,0 +1,34 @@
+### Send POST request with json body
+POST http://localhost:44300/Identity/register
+Content-Type: application/json
+
+{
+  "email": "user@store.com",
+  "password": "pass"
+}
+
+### Send POST request with json body
+POST http://localhost:44300/identity/login
+Content-Type: application/json
+
+{
+  "email": "user@store.com",
+  "password": "pass"
+}
+
+### GET request with environment variables
+GET http://localhost:44300/identity/validate?email=user@store.com
+    &token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjI0Njg2NTU2NDc1ODFiZGIzY2UzOTUiLCJleHAiOjE3MTM3NTAyMTV9.cm5lgdfXlayP55_ShLezwvbpYV99Mq_wJPOZoNWtZ-A 
+Accept: application/json
+
+### GET
+GET http://localhost:44300/catalog
+Accept: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjI0Njg2NTU2NDc1ODFiZGIzY2UzOTUiLCJleHAiOjE3MTM3NTAyMTV9.cm5lgdfXlayP55_ShLezwvbpYV99Mq_wJPOZoNWtZ-A
+
+
+
+### GET
+GET http://localhost:44300/cart?u=6615f58714227e4021227878
+Accept: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjI0Njg2NTU2NDc1ODFiZGIzY2UzOTUiLCJleHAiOjE3MTM3NTAyMTV9.cm5lgdfXlayP55_ShLezwvbpYV99Mq_wJPOZoNWtZ-A
