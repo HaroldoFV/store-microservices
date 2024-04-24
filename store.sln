@@ -28,6 +28,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Backend", "Backend\Backend.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackendGateway", "BackendGateway\BackendGateway.csproj", "{A6702E41-6400-4687-A108-F3091E1C02E3}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "global", "global", "{FCCDEEEB-4768-452D-AB14-5F0DE1F68A34}"
+	ProjectSection(SolutionItems) = preProject
+		.idea\README.md = .idea\README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
