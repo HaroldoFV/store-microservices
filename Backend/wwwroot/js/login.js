@@ -4,21 +4,20 @@ import common from "./common.js";
 window.onload = () => {
     "use strict";
 
-    localStorage.removeItem("auth");
+    window.localStorage.removeItem("auth");
 
     function login() {
         const user = {
             "email": document.getElementById("email").value,
             "password": document.getElementById("password").value
         };
-
-        common.post(settings.uri + "identity/login?d=frontend", (token) => {
+        common.post(settings.uri + "identity/login?d=backend", function (token) {
             const auth = {
                 "email": user.email,
                 "token": token
             };
-            localStorage.setItem("auth", JSON.stringify(auth));
-            location.href = "/store.html";
+            window.localStorage.setItem("auth", JSON.stringify(auth));
+            window.location = "/store.html";
         }, () => {
             alert("Wrong credentials.");
         }, user);
@@ -32,9 +31,5 @@ window.onload = () => {
         if (e.key === 'Enter') {
             login();
         }
-    };
-
-    document.getElementById("register").onclick = () => {
-        location.href = "/register.html";
     };
 };

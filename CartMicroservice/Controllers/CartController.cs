@@ -44,7 +44,7 @@ namespace CartMicroservice.Controllers
         }
 
         // PUT api/<CartController>/update-catalog-item
-        [HttpPut("upadate-catalog-item")]
+        [HttpPut("update-catalog-item")]
         [Authorize]
         public IActionResult Put([FromQuery(Name = "ci")] string catalogItemId,
             [FromQuery(Name = "n")] string name,

@@ -57,7 +57,7 @@ namespace CatalogMicroservice.Controllers
         }
 
         // DELETE api/<CatalogController>/653e4410614d711b7fc953a7
-        [HttpDelete]
+        [HttpDelete("{id}")]
         [Authorize]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]

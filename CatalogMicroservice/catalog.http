@@ -1,10 +1,10 @@
 ### GET  
-GET http://localhost:5086/api/Catalog
+GET http://localhost:44326/api/Catalog
 Accept: application/json
-Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjI0Njg2NTU2NDc1ODFiZGIzY2UzOTUiLCJleHAiOjE3MTM2NjU4OTl9.KJr2rD0PFfeykG3kxypD99ADhbi_TW3fGWTz8RrBnrk
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjI3MDg5MThlMzY2Nzg4NGNjOGY3ZjkiLCJleHAiOjE3MTM5OTI4NzZ9.piT9F6x92TGAC1s5_qDSb6QqC9yjx5N_-5_OKZOihqc 
 
 ### Send POST request with json body
-POST http://localhost:5086/api/Catalog
+POST http://localhost:44326/api/Catalog
 Content-Type: application/json
 Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjI0Njg2NTU2NDc1ODFiZGIzY2UzOTUiLCJleHAiOjE3MTM2NjU4OTl9.KJr2rD0PFfeykG3kxypD99ADhbi_TW3fGWTz8RrBnrk
 
@@ -13,3 +13,8 @@ Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjI0N
   "description": "test catalog",
   "price": 19.99
 }
+
+### DELETE
+DELETE http://localhost:44326/api/Catalog/66296a91ac4e2c774c131573
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjI3MDg5MThlMzY2Nzg4NGNjOGY3ZjkiLCJleHAiOjE3MTM5OTI4NzZ9.piT9F6x92TGAC1s5_qDSb6QqC9yjx5N_-5_OKZOihqc 

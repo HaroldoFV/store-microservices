@@ -8,16 +8,16 @@
 }
 
 .login {
-    width: 270px;
+    width: 250px;
     height: 150px;
     position: absolute;
     top: calc(50% - 75px);
-    left: calc(50% - 135px);
+    left: calc(50% - 125px);
     font-weight: bold;
 }
 
-    .login #register, .login #login {
-        float: right;
-        margin: 5px;
-        width: 85px;
-    }
+.login #login {
+    float: right;
+    margin: 5px;
+    width: 85px;
+}
